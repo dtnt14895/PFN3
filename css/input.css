@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    @apply duration-300;
+}
+
+
+
+.link{
+    @apply hidden;
+}
+
+.toggle span,.toggle>div ,.toggle a,.toggle li.block{
+    @apply flex;
+}
+.toggle a{
+    @apply hover:bg-gray-500;
+}
+
+aside:not(.toggle) a{
+    @apply hover:scale-150;
+}
+
+.toggle a:hover{
+    @apply ps-1;
+    @apply ms-2;
+    @apply py-2;
+}
+
+
+
+
+body.index {
+    position: relative;
+    background: linear-gradient(0deg, rgba(8, 0, 139, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+body.index::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(8, 0, 139, 1) 0%, rgba(0, 42, 51, 1) 100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.5s ease; /* Transición suave de 0.5 segundos */
+}
+
+.dark body.index::before {
+    opacity: 1;
+}
